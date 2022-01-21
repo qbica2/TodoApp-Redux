@@ -10,6 +10,10 @@ function Form() {
     const dispatch= useDispatch();
 
     const handleSubmit= (e)=> {
+        if(title===""){
+            alert("nothing to do")
+            return false;
+        }
         e.preventDefault()
 
         dispatch(addTodo({id: nanoid(), title, completed:false }))
